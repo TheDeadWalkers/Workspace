@@ -1,0 +1,12 @@
+package TestNG;
+
+public class testng2 {
+
+	public void t3() {
+		System.out.println("in t3");
+	}
+	
+	public void t4() {
+		System.out.println("in t4");
+	}
+}

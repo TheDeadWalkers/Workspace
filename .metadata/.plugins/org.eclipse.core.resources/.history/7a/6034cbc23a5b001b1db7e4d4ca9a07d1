@@ -1,0 +1,21 @@
+package Sample;
+
+public class test implements intDemo, demosam {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+	}
+
+	
+	public void demo() {
+		intDemo.super.demo();
+		System.out.println("ash lesha");
+	}
+	
+	
+
+}

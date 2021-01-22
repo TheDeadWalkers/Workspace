@@ -1,0 +1,16 @@
+package Sample;
+
+public class test implements intDemo {
+
+	public static void main(String[] args) {
+		
+		intDemo d = new test();
+		d.demo();
+		
+		
+	}
+
+	
+	
+
+}

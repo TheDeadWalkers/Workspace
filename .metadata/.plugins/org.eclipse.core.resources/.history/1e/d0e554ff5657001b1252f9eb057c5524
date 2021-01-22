@@ -1,0 +1,28 @@
+package tests;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
+
+public class SpiceJetTest {
+	static FileInputStream fis;
+	static XSSFWorkbook wb;
+	static XSSFRow row;
+	
+	@Test
+	public void readdata() throws IOException {
+		fis = new FileInputStream("C:\\Users\\akash\\workspace\\SpiceJet\\src\\test\\SpiceJet.xlsx");
+		wb = new XSSFWorkbook(fis);
+		int totalsheets = wb.getNumberOfSheets();
+		for(int i=0;i<totalsheets;i++) {
+			XSSFSheet sheet = wb.getSheetAt(i);
+			System.out.println(sheet.getSheetName());
+		}
+	}
+	
+}

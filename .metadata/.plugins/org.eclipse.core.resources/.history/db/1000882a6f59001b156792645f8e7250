@@ -1,0 +1,21 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DemoAutomation {
+	@Test
+	public void test() {
+		WebDriverManager.chromedriver().setup();
+		WebDriver d = new ChromeDriver();
+		d.get("http://demo.automationtesting.in/");
+		
+		d.findElement(By.id("btn2")).click();
+		d.findElement(By.xpath("//*[text()='WebTable']")).click();
+		
+		
+	}
+
+}

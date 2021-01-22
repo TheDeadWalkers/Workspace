@@ -1,0 +1,47 @@
+package tests;
+
+import java.awt.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestCode {
+	
+	
+	@Test
+	public void testdemo() throws InterruptedException{
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://book.spicejet.com/Register.aspx");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//input[@id='CONTROLGROUPREGISTERVIEW_PersonInputRegisterView_TEXTBOXINPUTDOB']")).click();
+		java.util.List<WebElement> year =driver.findElements(By.xpath("//tbody[@class='datepickerYears']/tr/td/a/span"));
+		
+		for(int i=0;i<year.size();i++) {
+			Thread.sleep(2000);
+			try {
+			while(!year.get(i).getText().equals("1972")) {
+				driver.findElement(By.xpath("//th[@class='datepickerGoPrev']/a")).click();
+				
+				
+			}
+			}catch (Exception e) {
+				
+			}
+			Thread.sleep(2000);
+			
+			if(year.get(i).getText().equals("1993")) {
+				year.get(i).click();
+				break;
+			}
+		}
+		
+	}
+
+}

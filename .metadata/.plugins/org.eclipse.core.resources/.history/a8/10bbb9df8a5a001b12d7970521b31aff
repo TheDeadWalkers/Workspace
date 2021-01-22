@@ -1,0 +1,17 @@
+package DDF;
+
+import org.junit.runners.Parameterized.Parameters;
+import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameter;
+
+public class TestNGParameters {
+	
+	
+	@Test
+	@Parameters({"browser"}) 
+	public void test() {
+		System.out.println("akash");
+	}
+
+}

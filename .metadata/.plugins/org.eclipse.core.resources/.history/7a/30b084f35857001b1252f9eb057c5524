@@ -1,0 +1,49 @@
+package tests;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
+
+import com.microsoft.schemas.office.visio.x2012.main.CellType;
+
+public class SpiceJetTest {
+	static FileInputStream fis;
+	static XSSFWorkbook wb;
+	static XSSFRow row;
+	XSSFSheet sheet;
+	XSSFCell cell;
+	
+	@Test
+	public void readdata() throws IOException {
+		fis = new FileInputStream("C:\\Users\\akash\\workspace\\SpiceJet\\src\\test\\SpiceJet.xlsx");
+		wb = new XSSFWorkbook(fis);
+		int totalsheets = wb.getNumberOfSheets();
+		sheet = wb.getSheetAt(0);
+		row = sheet.getRow(0);
+		int totalrow = sheet.getLastRowNum();
+		int totalcell = row.getLastCellNum();
+		Object[][] obj = new Object[totalrow][totalcell];
+		for(int i=0;i<totalrow;i++) {
+			for(int j=0;j<totalcell;j++) {
+				
+				cell = sheet.getRow(i+1).getCell(j);
+				
+				if(cell.getCellType() == org.apache.poi.ss.usermodel.CellType.STRING) {
+					obj[i][j] = cell.getStringCellValue();
+				}else {
+					obj[i][j] = (long)cell.getNumericCellValue();
+				}
+				
+			}
+		}
+		
+		System.out.println(Arrays.toString(obj));
+	}
+	
+}

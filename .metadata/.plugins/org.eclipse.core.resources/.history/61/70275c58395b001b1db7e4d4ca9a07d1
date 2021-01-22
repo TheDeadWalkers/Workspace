@@ -1,0 +1,9 @@
+package Sample;
+
+public interface intDemo {
+	
+	static void demo() {
+		System.out.println("intrface");
+	}
+
+}

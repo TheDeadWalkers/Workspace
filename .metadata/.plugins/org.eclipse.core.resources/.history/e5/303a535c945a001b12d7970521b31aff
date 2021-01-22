@@ -1,0 +1,23 @@
+package TestNG;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class testng1 {
+
+	@BeforeMethod
+	public void beforemethod() {
+		System.out.println("Before method in class t1");
+	}
+	
+	@Test
+	public void t1() {
+		System.out.println("in t1");
+	}
+	
+	@Test
+	public void t2() {
+		System.out.println("in t2");
+	}
+	
+}

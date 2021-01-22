@@ -1,0 +1,51 @@
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DemoAutomation {
+	public static WebDriver d;
+	@Test
+	public void test() throws IOException {
+		WebDriverManager.chromedriver().setup();
+		d = new ChromeDriver();
+		d.get("http://demo.automationtesting.in/");
+		d.manage().window().maximize();
+		d.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		
+		
+		d.findElement(By.id("btn2")).click();
+		
+		
+		d.findElement(By.id("msdd")).click();
+		
+		String[] conts= {"Romanian","Slovak","Ukrainian"};
+		
+		List<WebElement> c = d.findElements(By.xpath("//*[@class='ui-corner-all']"));
+		
+		for(int i=0;i<c.size();i++) {
+			
+			String name = c.get(i).getText();
+			List<String> ms = Arrays.asList(conts);
+			
+			if(ms.contains(name)) {
+				c.get(i).click();
+			}
+			
+		}
+		
+			
+		}
+		
+	
+	}
+	

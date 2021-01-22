@@ -1,0 +1,45 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DemoAutomation {
+	public static WebDriver d;
+	@Test
+	public void test() throws IOException {
+		WebDriverManager.chromedriver().setup();
+		d = new ChromeDriver();
+		d.get("http://demo.automationtesting.in/");
+		d.manage().window().maximize();
+		d.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		d.findElement(By.id("btn2")).click();
+		d.findElement(By.id("msdd")).click();
+		
+		List<WebElement> lang =d.findElements(By.xpath("//*[@class='ui-corner-all']"));
+		
+		for(WebElement l : lang) {
+			if(l.getText().equals("Portuguese")) {
+				l.click();
+			}
+		}
+		
+		
+		
+		
+		
+	}
+	
+
+}

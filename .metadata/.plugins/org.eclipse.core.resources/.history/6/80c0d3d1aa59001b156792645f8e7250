@@ -1,0 +1,61 @@
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DemoAutomation {
+	public static WebDriver d;
+
+	@Test
+	public void test() throws IOException {
+		WebDriverManager.chromedriver().setup();	
+		//ChromeOptions co = new ChromeOptions();
+		//co.addArguments("headless");
+		d = new ChromeDriver();
+		d.get("http://demo.automationtesting.in/");
+		d.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		d.manage().window().maximize();
+	
+		d.findElement(By.id("btn2")).click();
+		WebElement cn = d.findElement(By.id("msdd"));
+		cn.click();
+		 JavascriptExecutor js1 = (JavascriptExecutor) d;
+	        js1.executeScript("arguments[0].setAttribute('style', 'background: blue; border: 2px solid yellow;');", cn);
+	   
+		
+		String[] countries = { "Romanian", "Slovak", "Ukrainian", "Spanish", "Indonesian" };
+		List<String> selectedcountries = Arrays.asList(countries);
+
+		List<WebElement> allcountries = d.findElements(By.xpath("//*[@class='ui-corner-all']"));
+
+		for (int i = 0; i < allcountries.size(); i++) {
+			String allname = allcountries.get(i).getText();
+			if (selectedcountries.contains(allname)) {
+				allcountries.get(i).click();
+			}
+
+		}
+		
+		WebElement skill = d.findElement(By.id("Skills"));
+    	Select s1 = new Select(skill);
+    		s1.selectByValue("Linux");
+		
+		d.findElement(By.xpath("//*[@class='select2-selection select2-selection--single']")).click();
+		d.findElement(By.xpath("(//*[text()='India'])[3]")).click();
+		
+		System.out.println("Finally done");
+
+	}
+
+}

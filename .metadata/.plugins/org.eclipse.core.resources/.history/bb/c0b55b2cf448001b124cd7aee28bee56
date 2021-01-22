@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class StringSort {
+
+	public static void main(String[] args) {
+
+		String[] s = { "Hello", "Pune", "Latur", "Akash", "Aditya" };
+		Arrays.sort(s); // Sort array of string
+		System.out.println(Arrays.toString(s));
+
+		String x = "quick brown fox jumps over the lazy dog";
+		char[] xc = x.toCharArray();
+		HashSet<Character> hs = new HashSet<>();
+		
+		for(int i=0;i<xc.length;i++) {
+			hs.add(xc[i]);
+		}
+		
+		//Arrays.sort(xc); // Sort String
+		System.out.println(x);
+		System.out.println(hs);
+	}
+}

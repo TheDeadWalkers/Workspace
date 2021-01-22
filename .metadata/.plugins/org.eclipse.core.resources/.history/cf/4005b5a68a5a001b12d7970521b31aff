@@ -1,0 +1,13 @@
+package DDF;
+
+import org.testng.annotations.Test;
+
+public class TestNGParameters {
+	
+	
+	@Test
+	public void test() {
+		System.out.println("akash");
+	}
+
+}

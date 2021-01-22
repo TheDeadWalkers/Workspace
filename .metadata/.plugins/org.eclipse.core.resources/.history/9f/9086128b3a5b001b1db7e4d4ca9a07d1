@@ -1,0 +1,20 @@
+package Sample;
+
+public class test implements intDemo, demo {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+	}
+
+	
+	public void demo() {
+		System.out.println("ash lesha");
+	}
+	
+	
+
+}

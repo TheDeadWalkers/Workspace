@@ -1,0 +1,37 @@
+package objectRepo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class TestRepo {
+	
+	
+	WebDriver driver;
+	
+	public TestRepo(WebDriver d) {
+		driver = d;
+	}
+	
+	
+	By Email = By.name("email");
+	By Password = By.name("password");
+	By submit = By.xpath("//*[text()='Login']");
+	
+	
+	public WebElement email() {
+		return driver.findElement(Email);
+	}
+	
+	public WebElement pass() {
+		return driver.findElement(Password);
+	}
+	
+	public WebElement submit() {
+		return driver.findElement(submit);
+	}
+	
+
+	
+
+}

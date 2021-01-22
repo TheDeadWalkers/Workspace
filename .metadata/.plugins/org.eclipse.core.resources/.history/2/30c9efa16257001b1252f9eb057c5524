@@ -1,0 +1,28 @@
+package tests;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
+
+public class TestCode {
+
+	@Test
+	
+	public void testdemo() throws IOException {
+		FileInputStream fis = new FileInputStream("C:\\Users\\akash\\workspace\\SpiceJet\\src\\test\\SpiceJet.xlsx");
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		int totalsheets = wb.getNumberOfSheets();
+		for(int i=0;i<totalsheets;i++) {
+			//System.out.println(wb.getSheetName(i));
+			if(wb.getSheetName(i).equals("Sample")) {
+				System.out.println(wb.getSheetName(i));
+			}
+			
+		}
+		
+		
+		
+	}
+
+}

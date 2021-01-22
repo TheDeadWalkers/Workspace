@@ -1,0 +1,28 @@
+package TestNG;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class testng2 {
+
+	@AfterTest
+	public void aftertest() {
+		System.out.println("after test");
+	}
+	
+	@Test
+	public void t3() {
+		System.out.println("in t3");
+	}
+	
+	@Test
+	public void t4() {
+		System.out.println("in t4");
+	}
+	
+	@BeforeClass
+	public void beforeclass() {
+		System.out.println("Before class t2");
+	}
+}

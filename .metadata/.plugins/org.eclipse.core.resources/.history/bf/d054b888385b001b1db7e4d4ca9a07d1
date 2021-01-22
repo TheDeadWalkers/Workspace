@@ -1,0 +1,9 @@
+package Sample;
+
+public class intDemo {
+	
+	void show() {
+		
+	}
+
+}

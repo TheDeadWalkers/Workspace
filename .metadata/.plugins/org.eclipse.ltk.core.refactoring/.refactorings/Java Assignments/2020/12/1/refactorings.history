@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;TryHere&apos; to &apos;OnetonFibonnaci&apos;&#x0D;&#x0A;- Original project: &apos;Java Assignments&apos;&#x0D;&#x0A;- Original element: &apos;TryHere&apos;&#x0D;&#x0A;- Renamed element: &apos;OnetonFibonnaci&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TryHere&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/&lt;{TryHere.java[TryHere" matchStrategy="1" name="OnetonFibonnaci" qualified="false" references="true" similarDeclarations="false" stamp="1609063777817" textual="false" version="1.0"/>
+</session>
