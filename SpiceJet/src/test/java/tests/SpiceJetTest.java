@@ -2,7 +2,9 @@ package tests;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -48,10 +50,13 @@ public class SpiceJetTest {
 		sr.mobileno(mobile);
 		sr.password(password);
 		sr.confirmpassword(cpass);
-		
 		sr.email(email);
-		
-
+		Set<String> win = driver.getWindowHandles();
+		Iterator<String> itr = win.iterator();
+		while(itr.hasNext()) {
+			itr.next();
+			System.out.println(driver.getTitle());
+		}
 	}
 
 	@DataProvider
