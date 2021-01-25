@@ -6,7 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "features.test",glue = {"sdf.stepdef"})
-public class testr {
+@CucumberOptions(features = "src/test/java/feature", 
+				 glue = "stepdefenition")
+public class testrunner {
 
 }
