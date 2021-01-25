@@ -26,6 +26,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="Framework.E2E"/>
 			<item value="SpiceJetTests"/>
 			<item value="com.pageobjectmodel.PagebjectModel"/>
 			<item value="TestNG"/>
@@ -36,6 +37,7 @@
 			<item value="com.test.mmt.sdsf"/>
 		</list>
 		<list key="groupId">
+			<item value="Framework"/>
 			<item value="SpiceJet"/>
 			<item value="com.pageobjectmodel"/>
 			<item value="com"/>
@@ -45,6 +47,7 @@
 			<item value="com.test.mmt"/>
 		</list>
 		<list key="artifactId">
+			<item value="E2E"/>
 			<item value="SpiceJet"/>
 			<item value="PagebjectModel"/>
 			<item value="TestNG"/>
